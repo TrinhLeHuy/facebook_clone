@@ -1,0 +1,44 @@
+@import url("../globalStyles/GlobalStyles.module.scss");
+.info-container{
+    margin: 20px 0;
+    background: #242526;
+    border-bottom: 1px solid #3e4042;
+    color: var(--texttitlecolor);
+    padding: 20px;
+    border: solid 1px var(--hovercolor);
+    border-radius: 12px;
+    .info-title{
+        font-size: 20px;
+        margin-bottom: 10px;
+        font-weight: bold;
+        border-bottom: 1px solid var(--hovercolor);
+        padding-bottom: 10px;
+    }
+    .info-details{
+        font-size: 14px;
+        margin-bottom: 10px;
+        line-height: 25px;
+    }
+    .change_profile_btn{
+       display: flex;
+       justify-content: center;
+        align-items: center;
+        width: auto;
+        height: auto;
+        &:hover{
+            opacity: 0.8;
+        }
+        .btn{
+            padding: 10px 20px;
+            background: #3e4042;
+            border-bottom: 1px solid #3e4042;
+            color: var(--texttitlecolor);
+            font-size: 16px;
+            font-weight: bold;
+            border-radius: 5px;
+            border: none;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+    }
+}

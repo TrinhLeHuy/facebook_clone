@@ -1,0 +1,47 @@
+
+@import url("../globalStyles/GlobalStyles.module.scss");
+.profile-header{
+    border-bottom: 1px solid #3e4042;
+    .header-container{
+    border-bottom: 1px solid #3e4042;
+        color: var(--texttitlecolor);
+        display: flex;
+        align-items: center;
+        padding: 10px 20px;
+        margin-left: 10%;
+        height: auto;
+        .avatar{
+         
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            margin-right: 20px;
+            border: solid 2px #ddd;
+        }
+        .user-info{
+            gap: 10px;
+        }
+    }
+    .change_profile_btn{
+        background: #242526;
+        border-bottom: 1px solid #3e4042;
+        color: var(--texttitlecolor);
+        width: auto;
+        height: auto;
+        &:hover{
+            opacity: 0.8;
+        }
+        .btn{
+            padding: 10px 20px;
+            background-color: var(--texttitlecolor);
+            color: var(--whitecolor);
+            font-size: 16px;
+            font-weight: bold;
+            border-radius: 5px;
+            border: none;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+    }
+
+}

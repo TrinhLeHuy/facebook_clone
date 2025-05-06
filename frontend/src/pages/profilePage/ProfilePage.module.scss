@@ -1,0 +1,13 @@
+.container_friend_and_post{
+    display: flex;
+    // align-items: center;
+    justify-content: space-around;
+    margin: 20px 100px;
+    .container_post{
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+        justify-content: center;
+        // align-items: center;
+    }
+}

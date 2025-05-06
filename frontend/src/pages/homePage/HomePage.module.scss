@@ -1,0 +1,28 @@
+@import url('../../components/globalStyles/GlobalStyles.module.scss');
+
+html, body {
+  height: 100%; // Quan trọng nếu bạn chưa có
+  margin: 0;
+}
+
+
+.container-content {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    width: 100%;
+    margin: auto;
+
+    .container-post {
+        width: 70%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin-left: 330px;
+    }
+
+    .container-friends {
+        width: 30%;
+        //border: solid 1px red;
+    }
+}

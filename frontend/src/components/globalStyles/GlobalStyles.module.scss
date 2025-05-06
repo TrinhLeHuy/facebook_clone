@@ -1,0 +1,29 @@
+:root{
+    --background: #333;
+    --logocolor: #376dc5;
+    --textcolor: #38363b;
+    --whitecolor: #ffffff;
+    --greencolor:#42b72a;
+    --blackcolor: #000000;
+    --texttitlecolor:#ffffff;
+    --greenboldcolor:#00a400;
+    --backgroundPostColor: #252728;
+    --backgroundCommentDark: #333334;
+    --backgroundCommentLight: #f0f2f5;
+    --hovercolor: #d0d7dd;
+}
+@media (max-width: 1024px) { // Tablet
+    
+}
+
+@media (max-width: 600px) { // Mobile
+    
+}
+body {
+    background-color: var(--background);
+}
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
