@@ -80,19 +80,25 @@ const Navbar = ({ user }) => {
               onFocus={() => search && setShowDropdown(true)}
               className={cx("search-input")}
             />
-            {showDropdown && results.length > 0 && (
+            {showDropdown && (
               <div className={cx("search-dropdown")} ref={dropdownRef}>
-                {results.map((u) => (
-                  <div key={u.id} className={cx("search-item")}>
-                    <img
-                      src={u.avatarUrl ? `http://localhost:8080/uploads/${u.avatarUrl}` : "/assets/img/icons8-user-default-64.png"}
-                      alt={u.fullName}
-                      className={cx("avatar")}
-                    />
-                    <span>{u.fullName} ({u.username})</span>
-                    <button onClick={() => handleSendRequest(u.id)}>Kết bạn</button>
+                {results.length > 0 ? (
+                  results.map((u) => (
+                    <div key={u.id} className={cx("search-item")}>
+                      <img
+                        src={u.avatarUrl ? `http://localhost:8080/uploads/${u.avatarUrl}` : "/assets/img/icons8-user-default-64.png"}
+                        alt={u.fullName}
+                        className={cx("avatar")}
+                      />
+                      <span>{u.fullName} ({u.username})</span>
+                      <button onClick={() => handleSendRequest(u.id)}>Kết bạn</button>
+                    </div>
+                  ))
+                ) : (
+                  <div className={cx("search-item")}>
+                    Không có dữ liệu, hãy nhập tên khác
                   </div>
-                ))}
+                )}
               </div>
             )}
           </div>
