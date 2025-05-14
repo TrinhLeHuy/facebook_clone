@@ -129,12 +129,17 @@ public class UserService {
         userRepository.save(user);
         return "Cập nhật thông tin thành công!";
     }
-     public List<UserSearchResultDTO> searchUsers(String keyword, Long currentUserId) {
-        return userRepository
-            .findByUsernameContainingIgnoreCaseOrFullNameContainingIgnoreCaseAndIdNot(keyword, keyword, currentUserId)
-            .stream()
-            .map(u -> new UserSearchResultDTO(u.getId(), u.getUsername(), u.getFullName(), u.getAvatarUrl()))
-            .collect(Collectors.toList());
+    public List<UserSearchResultDTO> searchUsers(String keyword, Long currentUserId) {
+        List<User> users = userRepository.findByUsernameContainingIgnoreCaseOrFullNameContainingIgnoreCaseAndIdNot(
+            keyword, keyword, currentUserId
+        );
+        // Chuyển sang DTO để trả về frontend (tạo UserSearchResultDTO nếu chưa có)
+        return users.stream().map(user -> new UserSearchResultDTO(
+            user.getId(),
+            user.getUsername(),
+            user.getFullName(),
+            user.getAvatarUrl()
+        )).collect(Collectors.toList());
     }
     
 }
