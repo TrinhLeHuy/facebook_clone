@@ -1,10 +1,10 @@
 @import url('../../components/globalStyles/GlobalStyles.module.scss');
 
 html, body {
-  height: 100%; // Quan trọng nếu bạn chưa có
+  height: 100%;
   margin: 0;
+  background: #1a1a1a !important; 
 }
-
 
 .container-content {
     display: flex;
@@ -12,6 +12,8 @@ html, body {
     align-items: flex-start;
     width: 100%;
     margin: auto;
+    min-height: 100vh;
+    background: #1a1a1a !important; 
 
     .container-post {
         width: 70%;
@@ -19,10 +21,13 @@ html, body {
         flex-direction: column;
         align-items: center;
         margin-left: 330px;
+        background: #1a1a1a !important; 
     }
 
     .container-friends {
         width: 30%;
-        //border: solid 1px red;
+        background: #252728 !important; 
+        height: auto; 
+        min-height: 100vh; 
     }
 }

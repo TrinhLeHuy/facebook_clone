@@ -1,5 +1,15 @@
+// Đầu file SCSS (global hoặc từng file)
+html, body {
+  height: 100%;
+  margin: 0;
+  background: #1a1a1a !important; // Xám đen
+}
+
+.container-content {
+  background: #1a1a1a !important; // Xám đen
+}
+
 .modal {
- 
   position: fixed;
   top: 0;
   left: 0;
@@ -15,7 +25,7 @@
     width: 30%; /* Hoặc tùy theo bạn */
     max-height: 90vh; /* Tối đa 90% chiều cao màn hình */
     overflow-y: auto; /* Nội dung cuộn khi quá cao */
-    background: #242526;
+    background: #1a1a1a; // Xám đen
     border-bottom: 1px solid #3e4042;
     border-radius: 8px;
     padding: 20px;
@@ -51,7 +61,7 @@
     input, 
     textarea, 
     select {
-      background: #242526;
+      background: #1a1a1a; // Xám đen
       border-bottom: 1px solid #3e4042;
       color: var(--texttitlecolor);
       width: 100%;

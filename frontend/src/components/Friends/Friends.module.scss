@@ -7,10 +7,11 @@
     justify-items: center;
     padding: 5px;
     border-radius: 8px;
+    background: #1a1a1a; // Xám đen
     transition: background 0.3s ease;
     &:hover{
         cursor: pointer;
-        background-color: var(--hovercolor);
+        background-color: #232323; // Đổi màu nền khi hover
     }
     .avatar{
         margin: 5px 0px;
@@ -25,7 +26,7 @@
         .friend-name{
             font-size: 16px;
             font-weight: bold;
-            color: var(--textcolor); 
+            color:aliceblue; 
         }
         .message-btn{
             background-color: var(--logocolor);
