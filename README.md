@@ -3,7 +3,7 @@
 <p align="center">
   <img src="https://upload.wikimedia.org/wikipedia/commons/a/a7/React-icon.svg" alt="React Logo" width="80" height="80"/>
   &nbsp;&nbsp;&nbsp;
-  <img src="https://spring.io/images/spring-initializr-4291cc0115eb104348717b82161a81de.svg" alt="Spring Boot Logo" width="80" height="80"/>
+<img src="https://www.vectorlogo.zone/logos/springio/springio-icon.svg" alt="Spring Boot Logo" width="80" height="80"/>
 </p>
 
 ## Mô tả
@@ -67,5 +67,5 @@ npm run dev
 <p align="center">
   <img src="https://upload.wikimedia.org/wikipedia/commons/a/a7/React-icon.svg" alt="React Logo" width="40" height="40"/>
   &nbsp;&nbsp;&nbsp;
-  <img src="https://spring.io/images/spring-initializr-4291cc0115eb104348717b82161a81de.svg" alt="Spring Boot Logo" width="40" height="40"/>
+<img src="https://www.vectorlogo.zone/logos/springio/springio-icon.svg" alt="Spring Boot Logo" width="80" height="80"/>
 </p>
