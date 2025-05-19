@@ -7,7 +7,7 @@ import { useNavigate } from "react-router-dom";
 import axios from "axios";
 const cx = classNames.bind(styles);
 
-const Navbar = ({ user }) => {
+const Navbar = ({ user, onChatClick }) => {
     const [search, setSearch] = useState("");
     const [results, setResults] = useState([]);
     const [showDropdown, setShowDropdown] = useState(false);
@@ -89,9 +89,25 @@ const Navbar = ({ user }) => {
                         src={u.avatarUrl ? `http://localhost:8080/uploads/${u.avatarUrl}` : "/assets/img/icons8-user-default-64.png"}
                         alt={u.fullName}
                         className={cx("avatar")}
+                        onClick={() => {
+                          navigate(`/profile/${u.id}`);
+                          setShowDropdown(false);
+                        }}
+                        style={{ cursor: 'pointer' }}
                       />
-                      <span>{u.fullName} ({u.username})</span>
-                      <button onClick={() => handleSendRequest(u.id)}>Kết bạn</button>
+                      <span 
+                        onClick={() => {
+                          navigate(`/profile/${u.id}`);
+                          setShowDropdown(false);
+                        }}
+                        style={{ cursor: 'pointer' }}
+                      >
+                        {u.fullName} ({u.username})
+                      </span>
+                      {/* Ẩn nút kết bạn nếu là tài khoản bản thân */}
+                      {u.id !== currentUser.id && (
+                        <button onClick={() => handleSendRequest(u.id)}>Kết bạn</button>
+                      )}
                     </div>
                   ))
                 ) : (
@@ -111,7 +127,7 @@ const Navbar = ({ user }) => {
         </div>
         {/* Avatar người dùng */}
         <div className={cx("navbar-right")}>
-          <FaFacebookMessenger className={cx("chat-icon")}/>
+          <FaFacebookMessenger className={cx("chat-icon")} onClick={onChatClick} />
           <FaBell className={cx("Notification-icon")} />
           {user ? (
             <span className={cx("user-name")}>{user.username}</span>

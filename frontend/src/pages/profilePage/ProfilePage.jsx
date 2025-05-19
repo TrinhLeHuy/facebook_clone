@@ -47,7 +47,6 @@ const Profilepage = () => {
           <ListFriendsByID userId={user.id} />
         </div>
         <div className={cx("container_post")}>
-        {/* ✅ Chỉ hiển thị nếu là người dùng hiện tại */}
         {loggedInUser.id === user.id && (
             <div className={cx("change_profile_btn")}>
               <PostingForm variant="profile" />

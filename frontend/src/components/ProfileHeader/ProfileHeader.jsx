@@ -16,7 +16,7 @@
 
     const handleSendFriendRequest = async () => {
       try {
-        await axios.post(`http://localhost:8080/search`, null, {
+        await axios.post(`http://localhost:8080/api/friends/request`, null, {
           params: {
             senderId: currentUserId,
             receiverId: userId
@@ -29,6 +29,48 @@
       }
     };
     
+    const handleAcceptRequest = async () => {
+      try {
+        await axios.post(`http://localhost:8080/api/friends/accept`, null, {
+          params: {
+            senderId: userId,
+            receiverId: currentUserId
+          }
+        });
+        setFriendRequestStatus("FRIENDS");
+      } catch (error) {
+        alert("Lỗi xác nhận lời mời!");
+      }
+    };
+
+    const handleRejectRequest = async () => {
+      try {
+        await axios.post(`http://localhost:8080/api/friends/reject`, null, {
+          params: {
+            senderId: userId,
+            receiverId: currentUserId
+          }
+        });
+        setFriendRequestStatus("NONE");
+      } catch (error) {
+        alert("Lỗi từ chối lời mời!");
+      }
+    };
+
+    const handleUnfriend = async () => {
+      try {
+        await axios.delete(`http://localhost:8080/api/friends/unfriend`, {
+          params: {
+            userId1: currentUserId,
+            userId2: userId
+          }
+        });
+        setFriendRequestStatus("NONE");
+      } catch (error) {
+        alert("Lỗi khi hủy kết bạn!");
+      }
+    };
+
     useEffect(() => {
       if (!userId) return;
 
@@ -81,15 +123,18 @@
         {currentUserId !== userId && (
           <div className={cx("change_profile_btn")}>
             {friendRequestStatus === "FRIENDS" && (
-              <button className={cx("btn", "friends")} disabled>Đã là bạn bè</button>
+              <>
+                <button className={cx("btn", "friends")} disabled>Đã là bạn bè</button>
+                <button className={cx("btn", "unfriend")} onClick={handleUnfriend}>Hủy kết bạn</button>
+              </>
             )}
             {friendRequestStatus === "SENT" && (
               <button className={cx("btn", "sent")} disabled>Đã gửi lời mời</button>
             )}
             {friendRequestStatus === "PENDING" && (
               <>
-                <button className={cx("btn", "accept")}>Xác nhận</button>
-                <button className={cx("btn", "reject")}>Từ chối</button>
+                <button className={cx("btn", "accept")} onClick={handleAcceptRequest}>Xác nhận</button>
+                <button className={cx("btn", "reject")} onClick={handleRejectRequest}>Từ chối</button>
               </>
             )}
             {friendRequestStatus === "NONE" && (
@@ -97,7 +142,9 @@
                 Thêm bạn bè
               </button>
             )}
-            
+            {friendRequestStatus === "error" && (
+              <span style={{color: 'red'}}>Có lỗi xảy ra!</span>
+            )}
           </div>
         )}
       </div>
