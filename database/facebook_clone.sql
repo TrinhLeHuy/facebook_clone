@@ -3,9 +3,9 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Apr 13, 2025 at 07:19 PM
+-- Generation Time: May 19, 2025 at 07:27 PM
 -- Server version: 10.4.32-MariaDB
--- PHP Version: 8.2.12
+-- PHP Version: 8.0.30
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -40,11 +40,7 @@ CREATE TABLE `comments` (
 --
 
 INSERT INTO `comments` (`id`, `post_id`, `user_id`, `content`, `created_at`) VALUES
-(1, 3, 1, 'đây là post test', '2025-03-17 04:22:19'),
-(2, 4, 1, 'It\'s so Beautyfull', '2025-03-17 04:23:08'),
-(3, 4, 1, 'Nice picture!!!', '2025-03-17 16:32:32'),
-(4, 3, 1, 'Post test đầu tiên!', '2025-03-19 14:53:52'),
-(5, 4, 2, 'This is nature!!', '2025-03-19 15:25:49');
+(6, 7, 1, 'hihi', '2025-05-06 13:39:01');
 
 -- --------------------------------------------------------
 
@@ -65,9 +61,8 @@ CREATE TABLE `friendships` (
 --
 
 INSERT INTO `friendships` (`id`, `user1_id`, `user2_id`, `status`, `created_at`) VALUES
-(1, 1, 2, 'ACCEPTED', '2025-03-19 16:51:42'),
-(2, 1, 3, 'ACCEPTED', '2025-03-23 11:32:08'),
-(3, 2, 3, 'ACCEPTED', '2025-03-23 14:38:25');
+(6, 4, 2, 'PENDING', '2025-05-19 09:33:26'),
+(8, 4, 1, 'ACCEPTED', '2025-05-19 10:11:06');
 
 -- --------------------------------------------------------
 
@@ -87,10 +82,7 @@ CREATE TABLE `likes` (
 --
 
 INSERT INTO `likes` (`id`, `post_id`, `user_id`, `created_at`) VALUES
-(1, 4, 2, '2025-04-06 04:30:57'),
-(3, 6, 1, '2025-04-06 04:36:37'),
-(14, 5, 3, '2025-04-07 02:56:27'),
-(19, 6, 3, '2025-04-07 03:38:06');
+(22, 7, 1, '2025-05-06 13:38:56');
 
 -- --------------------------------------------------------
 
@@ -125,10 +117,9 @@ CREATE TABLE `posts` (
 --
 
 INSERT INTO `posts` (`id`, `user_id`, `content`, `image_url`, `created_at`) VALUES
-(3, 1, 'test', '1741963649997_Screenshot_2025-03-10_224543.png', '2025-03-14 14:47:30'),
-(4, 1, 'mùa thu đẹp', '1742060945132_muathutrongrung.jpg', '2025-03-15 17:49:05'),
-(5, 1, 'cơm', '1743048411353_Screenshot_2025-03-10_224821.png', '2025-03-27 04:06:51'),
-(6, 3, 'Đây là Post test chữ đầu tiên', NULL, '2025-04-05 02:03:25');
+(7, 1, 'hihi', '1746538725615_85275-your-lie-in-april-anime-girl-anime-artist-artwork-digital-art-hd.jpg', '2025-05-06 13:38:45'),
+(8, 1, 'bird', '1746546404877_1.jpg', '2025-05-06 15:46:44'),
+(9, 4, 'fly', '1747243447721_perceptual-standard.jpg', '2025-05-14 17:24:07');
 
 -- --------------------------------------------------------
 
@@ -155,9 +146,9 @@ CREATE TABLE `users` (
 --
 
 INSERT INTO `users` (`id`, `full_name`, `email`, `password`, `avatar_url`, `bio`, `birthday`, `gender`, `role`, `created_at`, `username`) VALUES
-(1, 'John Doe', 'johndoe2@gmail.com', '$2a$10$CWcRrRDwRMnhaHsDg0vyDuNVRPfbWN1AmVRZhRyqqsTLmgcjjeQ7q', 'user_1.png', 'Hi! I\'m First user', '2004-07-14', 'FEMALE', 'USER', '2025-03-06 03:21:23', 'john doe'),
-(2, 'Nguyen Huy', 'NguyenHuy@gmail.com', '$2a$10$K8ATlHkaUcDY0LgsCgZh8.F.8OydlEjv00q6mQjh24./aqURmvsea', 'warning.jpg', 'Im\'President', '2004-04-15', 'MALE', 'ADMIN', '2025-03-19 15:17:33', 'Nguyen Huy'),
-(3, 'Trí Viễn', 'Mwg2004@gmail.com', '$2a$10$CfhahwTvCtez8e5RFVtA1.lUraXn/m8N2iznJcuOLr9XF5x5SDqIq', 'user_1.png', 'Friend\'s President', '2025-04-02', 'OTHER', 'USER', '2025-03-20 16:56:42', 'Trí Viễn');
+(1, 'Huy Lê', 'huyle@gmail.com', '$2a$10$CWcRrRDwRMnhaHsDg0vyDuNVRPfbWN1AmVRZhRyqqsTLmgcjjeQ7q', 'c55d1012-bb3b-402b-af98-943bebd92699_OIP.jpg', 'Hi! I\'m First user', '2004-07-12', 'MALE', 'USER', '2025-03-06 03:21:23', 'Huy Le'),
+(2, 'Huy Trinh', 'HuyTrinh@gmail.com', '$2a$10$CfhahwTvCtez8e5RFVtA1.lUraXn/m8N2iznJcuOLr9XF5x5SDqIq', 'warning.jpg', 'Im\'President', '2004-04-15', 'MALE', 'ADMIN', '2025-03-19 15:17:33', 'Huy Trinh'),
+(4, 'Huy', 'huy@gmail.com', '$2a$10$CfhahwTvCtez8e5RFVtA1.lUraXn/m8N2iznJcuOLr9XF5x5SDqIq', 'user_1.png', 'Friend\'s President', '2025-04-02', 'MALE', 'USER', '2025-03-20 16:56:42', 'Huy');
 
 --
 -- Indexes for dumped tables
@@ -218,19 +209,19 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT for table `comments`
 --
 ALTER TABLE `comments`
-  MODIFY `id` bigint(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `id` bigint(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
 -- AUTO_INCREMENT for table `friendships`
 --
 ALTER TABLE `friendships`
-  MODIFY `id` bigint(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id` bigint(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 
 --
 -- AUTO_INCREMENT for table `likes`
 --
 ALTER TABLE `likes`
-  MODIFY `id` bigint(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=20;
+  MODIFY `id` bigint(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=23;
 
 --
 -- AUTO_INCREMENT for table `messages`
@@ -242,13 +233,13 @@ ALTER TABLE `messages`
 -- AUTO_INCREMENT for table `posts`
 --
 ALTER TABLE `posts`
-  MODIFY `id` bigint(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `id` bigint(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
 
 --
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` bigint(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id` bigint(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- Constraints for dumped tables
