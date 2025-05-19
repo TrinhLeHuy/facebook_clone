@@ -65,7 +65,7 @@ npm run dev
 ---
 
 <p align="center">
-  <img src="https://upload.wikimedia.org/wikipedia/commons/a/a7/React-icon.svg" alt="React Logo" width="40" height="40"/>
+  <img src="https://upload.wikimedia.org/wikipedia/commons/a/a7/React-icon.svg" alt="React Logo" width="80" height="80"/>
   &nbsp;&nbsp;&nbsp;
 <img src="https://www.vectorlogo.zone/logos/springio/springio-icon.svg" alt="Spring Boot Logo" width="80" height="80"/>
 </p>
